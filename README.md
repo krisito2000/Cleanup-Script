@@ -35,30 +35,31 @@
 
 ## 📖 Table of Contents
 
-- [🌟 Why Cleanup.sh?](#-why-cleanupsh)
-- [⚡ Key Features](#-key-features)
-- [🐧 Distribution Support Matrix](#-distribution-support-matrix)
-- [🛡️ Safety Guarantees & Architecture](#️-safety-guarantees--architecture)
-- [🚀 Quick Start & Installation](#-quick-start--installation)
-- [🎛️ Interactive Menu Tour (Modules 0–9)](#️-interactive-menu-tour-modules-09)
-  - [`[0] Show System Overview`](#-0-show-system-overview)
-  - [`[1] Interactive Package Cleaner`](#-1-interactive-package-cleaner)
-  - [`[2] Show Biggest Packages (Top 30)`](#-2-show-biggest-packages-top-30)
-  - [`[3] Remove Orphan Packages`](#-3-remove-orphan-packages)
-  - [`[4] Selective Cache Cleaner`](#-4-selective-cache-cleaner)
-  - [`[5] Clean Old Kernels`](#-5-clean-old-kernels)
-  - [`[6] Directory Cleaner`](#-6-directory-cleaner)
-  - [`[7] Clean All Caches at Once (Batch)`](#-7-clean-all-caches-at-once-batch)
-  - [`[8] Show Cleanup Log`](#-8-show-cleanup-log)
-  - [`[9] Manage Skipped Packages`](#-9-manage-skipped-packages)
-- [⌨️ Keyboard Shortcuts & Input Syntax](#️-keyboard-shortcuts--input-syntax)
-- [📂 Directory Layout & Config](#-directory-layout--config)
-- [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-faq)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
+- [🌟 Why Cleanup.sh?](#why-cleanupsh)
+- [⚡ Key Features](#key-features)
+- [🐧 Distribution Support Matrix](#distribution-support-matrix)
+- [🛡️ Safety Guarantees & Architecture](#safety-guarantees-architecture)
+- [🚀 Quick Start & Installation](#quick-start-installation)
+- [🎛️ Interactive Menu Tour (Modules 0–9)](#interactive-menu-tour-modules-09)
+  - [`[0] Show System Overview`](#0-show-system-overview)
+  - [`[1] Interactive Package Cleaner`](#1-interactive-package-cleaner)
+  - [`[2] Show Biggest Packages (Top 30)`](#2-show-biggest-packages-top-30)
+  - [`[3] Remove Orphan Packages`](#3-remove-orphan-packages)
+  - [`[4] Selective Cache Cleaner`](#4-selective-cache-cleaner)
+  - [`[5] Clean Old Kernels`](#5-clean-old-kernels)
+  - [`[6] Directory Cleaner`](#6-directory-cleaner)
+  - [`[7] Clean All Caches at Once (Batch)`](#7-clean-all-caches-at-once-batch)
+  - [`[8] Show Cleanup Log`](#8-show-cleanup-log)
+  - [`[9] Manage Skipped Packages`](#9-manage-skipped-packages)
+- [⌨️ Keyboard Shortcuts & Input Syntax](#keyboard-shortcuts-input-syntax)
+- [📂 Directory Layout & Config](#directory-layout-config)
+- [❓ Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
+- [🤝 Contributing](#contributing)
+- [📄 License](#license)
 
 ---
 
+<a id="why-cleanupsh"></a>
 ## 🌟 Why Cleanup.sh?
 
 Over weeks and months of daily Linux usage, disks accumulate gigabytes of forgotten data:
@@ -81,6 +82,7 @@ Many existing cleaning scripts are either **dangerous** (indiscriminately runnin
 
 ---
 
+<a id="key-features"></a>
 ## ⚡ Key Features
 
 | Feature | Description |
@@ -97,6 +99,7 @@ Many existing cleaning scripts are either **dangerous** (indiscriminately runnin
 
 ---
 
+<a id="distribution-support-matrix"></a>
 ## 🐧 Distribution Support Matrix
 
 `cleanup.sh` contains zero hardcoded paths or assumptions. It maps operations to the host package manager automatically:
@@ -116,6 +119,7 @@ Many existing cleaning scripts are either **dangerous** (indiscriminately runnin
 
 ---
 
+<a id="safety-guarantees-architecture"></a>
 ## 🛡️ Safety Guarantees & Architecture
 
 ```mermaid
@@ -141,6 +145,7 @@ flowchart TD
 
 ---
 
+<a id="quick-start-installation"></a>
 ## 🚀 Quick Start & Installation
 
 ### Option 1: Git Clone (Recommended)
@@ -172,6 +177,7 @@ cleanup
 
 ---
 
+<a id="interactive-menu-tour-modules-09"></a>
 ## 🎛️ Interactive Menu Tour (Modules 0–9)
 
 ```
@@ -197,6 +203,7 @@ cleanup
 
 ---
 
+<a id="0-show-system-overview"></a>
 ### `[0] Show System Overview`
 Provides an instant diagnostic snapshot of your machine:
 - Host distribution name, ID, and version
@@ -207,6 +214,7 @@ Provides an instant diagnostic snapshot of your machine:
 
 ---
 
+<a id="1-interactive-package-cleaner"></a>
 ### `[1] Interactive Package Cleaner`
 Inspect installed applications and packages sorted **from largest to smallest**:
 - Displays package index `[i/N]`, exact name, human-readable size, and package summary description.
@@ -221,6 +229,7 @@ Inspect installed applications and packages sorted **from largest to smallest**:
 
 ---
 
+<a id="2-show-biggest-packages-top-30"></a>
 ### `[2] Show Biggest Packages (Top 30)`
 A fast, tabular overview of the 30 largest installed packages taking up space on your disk:
 - Accurately formatted in `GiB`, `MiB`, or `KiB`.
@@ -228,6 +237,7 @@ A fast, tabular overview of the 30 largest installed packages taking up space on
 
 ---
 
+<a id="3-remove-orphan-packages"></a>
 ### `[3] Remove Orphan Packages`
 Discovers packages installed as dependencies that are no longer required by any active package:
 - Lists all detected orphans along with their individual sizes and total reclaimable space.
@@ -235,6 +245,7 @@ Discovers packages installed as dependencies that are no longer required by any 
 
 ---
 
+<a id="4-selective-cache-cleaner"></a>
 ### `[4] Selective Cache Cleaner`
 Allows you to pick and choose exactly which caches to purge:
 - **User Cache**: `~/.cache` (recreates automatically as needed)
@@ -250,6 +261,7 @@ Allows you to pick and choose exactly which caches to purge:
 
 ---
 
+<a id="5-clean-old-kernels"></a>
 ### `[5] Clean Old Kernels`
 Safely purges superseded Linux kernel packages that linger after system upgrades:
 - Checks installed kernels against the running kernel (`uname -r`).
@@ -260,6 +272,7 @@ Safely purges superseded Linux kernel packages that linger after system upgrades
 
 ---
 
+<a id="6-directory-cleaner"></a>
 ### `[6] Directory Cleaner`
 Dynamically scans and ranks directories taking up storage:
 - Scans user home directories (`~/Videos`, `~/Downloads`, `~/Unity`, `~/Desktop`, etc.) sorted largest-first.
@@ -268,6 +281,7 @@ Dynamically scans and ranks directories taking up storage:
 
 ---
 
+<a id="7-clean-all-caches-at-once-batch"></a>
 ### `[7] Clean All Caches at Once (Batch)`
 For users who want a quick, comprehensive storage cleanup:
 - Scans all detected caches simultaneously.
@@ -276,12 +290,14 @@ For users who want a quick, comprehensive storage cleanup:
 
 ---
 
+<a id="8-show-cleanup-log"></a>
 ### `[8] Show Cleanup Log`
 Opens the built-in action log viewer displaying `~/.config/cleanup/cleanup-log.txt`:
 - Shows complete timestamped history of all cleaned directories, removed packages, and freed bytes.
 
 ---
 
+<a id="9-manage-skipped-packages"></a>
 ### `[9] Manage Skipped Packages`
 Interactive management of your permanent ignore list (`~/.config/cleanup/skipped_packages.txt`):
 - Lists all currently skipped packages with their installed sizes.
@@ -292,6 +308,7 @@ Interactive management of your permanent ignore list (`~/.config/cleanup/skipped
 
 ---
 
+<a id="keyboard-shortcuts-input-syntax"></a>
 ## ⌨️ Keyboard Shortcuts & Input Syntax
 
 ### Inside Package Cleaner (`Option 1`)
@@ -316,6 +333,7 @@ Interactive management of your permanent ignore list (`~/.config/cleanup/skipped
 
 ---
 
+<a id="directory-layout-config"></a>
 ## 📂 Directory Layout & Config
 
 `cleanup.sh` uses modern XDG-compliant configuration paths under `$HOME/.config/cleanup/`:
@@ -344,6 +362,7 @@ rm -rf ~/.config/cleanup
 
 ---
 
+<a id="frequently-asked-questions-faq"></a>
 ## ❓ Frequently Asked Questions (FAQ)
 
 <details>
@@ -372,6 +391,7 @@ No. <code>cleanup.sh</code> never touches your actively booted kernel (identifie
 
 ---
 
+<a id="contributing"></a>
 ## 🤝 Contributing
 
 Contributions, issues, and feature suggestions are warmly welcomed!
@@ -384,6 +404,7 @@ Contributions, issues, and feature suggestions are warmly welcomed!
 
 ---
 
+<a id="license"></a>
 ## 📄 License
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
